@@ -26,6 +26,7 @@
 #include "bio.h"
 #include "keymeta.h"
 
+#include <unistd.h>
 /*-----------------------------------------------------------------------------
  * C-level DB API
  *----------------------------------------------------------------------------*/
@@ -1365,6 +1366,7 @@ void delGenericCommand(client *c, int lazy) {
 }
 
 void delCommand(client *c) {
+    usleep(500000);
     delGenericCommand(c,server.lazyfree_lazy_user_del);
 }
 
