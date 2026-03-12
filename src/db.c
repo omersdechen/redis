@@ -1368,6 +1368,12 @@ void delCommand(client *c) {
     delGenericCommand(c,server.lazyfree_lazy_user_del);
 }
 
+void pastenCommand(client *c) {
+    const char *s = "137";
+    addReplyBulkCBuffer(c,s,strlen(s));
+    // delGenericCommand(c,server.lazyfree_lazy_user_del);
+}
+
 /* DELEX key [IFEQ match-value|IFNE match-value|IFDEQ match-digest|IFDNE match-digest]
  *
  * Conditionally removes the specified key. A key is ignored if it does not
